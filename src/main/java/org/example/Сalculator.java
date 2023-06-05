@@ -16,7 +16,7 @@ public class Сalculator {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             String[] operators = scanner.nextLine().split(" ");
-            if("Q".contains(operators[0])){
+            if ("Q".contains(operators[0])) {
                 break;
             }
             if (invalid(operators))
@@ -35,17 +35,17 @@ public class Сalculator {
     }
 
     private static boolean invalid(String[] operators) {
-        // length of operators must be 3
+
         if (operators.length != 3) {
             System.out.println("must 3 elements");
             return true;
         }
-        // parse two nums
+
         if (parseStringToInteger(operators[0]) == null || parseStringToInteger(operators[2]) == null) {
             System.out.println("one of the nums is invalid");
             return true;
         }
-        //check allowed operations
+
         if (!ALLOW_OPERATORS.contains(operators[1])) {
             System.out.println("contains invalid operations allowed only +-*/");
             return true;
